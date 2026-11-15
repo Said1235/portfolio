@@ -1,38 +1,44 @@
 # Portafolio de Said
 
-Sitio estático en HTML, CSS y JavaScript. No necesita Node.js, base de datos, framework ni servicios externos para funcionar. Está preparado para publicarse en GitHub Pages mediante GitHub Actions.
+Sitio estático personal en HTML, CSS y JavaScript. No requiere Node.js, base de datos, framework ni servicios externos.
 
-## Vista general
+## Contenido
 
-- Inicio editorial con presentación y navegación responsive.
-- Proyectos conectados a repositorios reales de GitHub.
-- Sección de laboratorio para IA, sistemas verificables y diseño de producto.
-- Bitácora preparada para artículos editables desde `content.js`.
-- Página dinámica `article.html?slug=...` para leer cada publicación.
-- Flujo de despliegue automático a GitHub Pages.
+- Inicio editorial y adaptable a móvil.
+- Sección de proyectos enlazados a repositorios de GitHub.
+- Laboratorio de IA, sistemas verificables y producto.
+- Bitácora para artículos, con página de lectura individual.
+- Contenido editable desde un único archivo: `content.js`.
 
 ## Publicar en GitHub Pages
 
-1. Sube el contenido completo de este repositorio a la rama `main`.
-2. En GitHub, abre **Settings → Pages**.
-3. En **Build and deployment**, selecciona **GitHub Actions** como Source si GitHub lo solicita.
-4. Ve a **Actions** y comprueba que termine el flujo **Deploy portfolio to GitHub Pages**.
-5. La URL es `https://said1235.github.io/portfolio/`.
+Este repositorio usa la publicación integrada de GitHub Pages desde la rama `main`. No necesita GitHub Actions.
 
-## Cambiar textos y proyectos
+1. Abre **Settings → Pages** en este repositorio.
+2. En **Build and deployment → Source**, selecciona **Deploy from a branch**.
+3. En **Branch**, selecciona `main`.
+4. En la carpeta, selecciona `/(root)`.
+5. Pulsa **Save**.
+6. Espera a que GitHub publique el sitio. La dirección de este repositorio es:
 
-Abre `content.js`. Allí puedes editar:
+   **https://said1235.github.io/portfolio/**
 
-- `identity`: nombre visible, título principal, descripción y texto de presentación.
-- `links`: GitHub y correo de contacto.
-- `projects`: nombre, categoría, descripción, nota, enlace y estilo visual de cada proyecto.
-- `articles`: lista de publicaciones del blog.
+Si la URL muestra 404, comprueba que Pages esté configurado exactamente con `main` y `/(root)`, que el repositorio siga siendo público y que exista el archivo `index.html` en la raíz. La publicación inicial puede tardar algunos minutos.
 
-No es necesario modificar `app.js` para añadir tarjetas de proyectos o artículos.
+## Editar textos y proyectos
+
+Abre `content.js`:
+
+- `identity`: titular, descripción y presentación.
+- `links`: enlaces de contacto.
+- `projects`: tarjetas de proyectos, descripción y enlace.
+- `articles`: entradas de la bitácora.
+
+No necesitas modificar el diseño para actualizar el contenido.
 
 ## Añadir un artículo
 
-En `content.js`, dentro de `articles`, añade un objeto con esta estructura:
+Dentro del arreglo `articles` de `content.js`, agrega un objeto como este:
 
 ```js
 {
@@ -46,31 +52,30 @@ En `content.js`, dentro de `articles`, añade un objeto con esta estructura:
     { type: "paragraph", text: "Escribe aquí el primer párrafo." },
     { type: "heading", text: "Una idea importante" },
     { type: "paragraph", text: "Continúa desarrollando la idea." },
-    { type: "quote", text: "Una frase que quieras destacar." },
+    { type: "quote", text: "Una frase para destacar." },
     { type: "list", items: ["Primer punto", "Segundo punto"] }
   ]
 }
 ```
 
-El `slug` debe ser único. La publicación aparecerá en la bitácora y se abrirá en `article.html?slug=mi-primera-nota`.
+El `slug` debe ser único. El artículo aparecerá en la bitácora y se abrirá en `article.html?slug=mi-primera-nota`.
 
 ## Probar localmente
 
-Abre `index.html` en el navegador. Para probarlo con un servidor local de Python:
+Con Python instalado, ejecuta desde la carpeta raíz:
 
 ```bash
 python -m http.server 8000
 ```
 
-Después visita `http://localhost:8000`.
+Abre `http://localhost:8000`.
 
-## Personalización
+## Personalizar
 
-- Colores, tipografías, espaciado y responsive: `styles.css`.
-- Textos, proyectos y artículos: `content.js`.
-- Renderizado y navegación: `app.js` y `article.js`.
-- Icono: `assets/favicon.svg`.
+- `styles.css`: colores, tipografía, espaciado y diseño responsive.
+- `content.js`: textos, proyectos y artículos.
+- `app.js`: renderizado de la portada.
+- `article.js`: renderizado de artículos.
+- `assets/favicon.svg`: icono del sitio.
 
-## Nota
-
-Los proyectos iniciales enlazan a repositorios públicos bajo `Said1235`. Los textos de presentación están redactados como punto de partida y puedes personalizarlos.
+Los proyectos iniciales enlazan a repositorios públicos bajo `Said1235`. Revisa sus descripciones y enlaces antes de compartir el portafolio como presentación definitiva.
