@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const data = window.PORTFOLIO || {};
   const $ = (selector) => document.querySelector(selector);
   const esc = (value = "") => String(value).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -20,13 +20,19 @@
 
   const list = $("#article-list");
   if (list) {
-    const articles = (data.articles || []).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
-    if (!articles.length) {
-      list.innerHTML = '<div class="empty-notes"><div class="empty-index">NOTEBOOK / 001</div><div><h3>La primera historia todavía está por escribirse.</h3><p>Este espacio ya está conectado. Añade un artículo en <code>content.js</code> y aparecerá aquí sin cambiar el diseño.</p></div><span class="empty-spark">✳</span></div>';
+    const articles = window.PORTFOLIO_POSTS_PROMISE
+      ? await window.PORTFOLIO_POSTS_PROMISE
+      : (data.articles || []);
+
+    if (articles === null) {
+      list.innerHTML = '<div class="empty-notes"><div class="empty-index">NOTEBOOK / OFFLINE</div><div><h3>No se pudo cargar la bitácora.</h3><p>La conexión con GitHub no respondió. Recarga la página para intentarlo de nuevo.</p></div><span class="empty-spark">↻</span></div>';
+    } else if (!articles.length) {
+      list.innerHTML = '<div class="empty-notes"><div class="empty-index">NOTEBOOK / 001</div><div><h3>La primera historia todavía está por escribirse.</h3><p>Abre el editor visual, crea una entrada y publícala. Aparecerá aquí automáticamente.</p><a class="text-link" href="https://pagescms.org/" target="_blank" rel="noreferrer">Abrir Pages CMS ↗</a></div><span class="empty-spark">✳</span></div>';
     } else {
       list.innerHTML = articles.slice(0,6).map((a,i)=>'<a class="article-row" href="article.html?slug='+encodeURIComponent(a.slug)+'"><span class="article-number">0'+(i+1)+'</span><span class="article-main"><span class="article-category">'+esc(a.category||"NOTA")+'</span><strong>'+esc(a.title)+'</strong><span class="article-excerpt">'+esc(a.excerpt||"")+'</span></span><span class="article-date">'+esc(a.date||"")+'</span><span class="article-arrow">↗</span></a>').join("");
     }
   }
+
   const year = $("#year"); if (year) year.textContent = new Date().getFullYear();
   const toggle = $("#menu-toggle"), nav = $("#site-nav");
   if (toggle && nav) {
