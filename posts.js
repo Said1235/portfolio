@@ -153,7 +153,7 @@
     if (!Array.isArray(files)) throw new Error("La respuesta de GitHub no contiene una lista de artículos.");
 
     const markdownFiles = files.filter(file =>
-      file.type === "file" && typeof file.name === "string" && file.name.toLowerCase().endsWith(".md")
+      file.type === "file" && typeof file.name === "string" && file.name.toLowerCase().endsWith(".md") && file.name.toLowerCase() !== "readme.md"
     );
 
     const posts = await Promise.all(markdownFiles.map(async file => {
