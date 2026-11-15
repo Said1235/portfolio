@@ -1,4 +1,4 @@
-/* EDITA ESTE ARCHIVO PARA ACTUALIZAR EL PORTAFOLIO Y PUBLICAR ARTÍCULOS. */
+/* EDITA ESTE ARCHIVO PARA ACTUALIZAR LOS TEXTOS Y PROYECTOS. LOS ARTÍCULOS SE GESTIONAN EN PAGES CMS. */
 window.PORTFOLIO = {
   identity: {
     name: "Said",
@@ -17,24 +17,5 @@ window.PORTFOLIO = {
     { number:"05",name:"AI URL Reputation Oracle",category:"AI · SECURITY · WEB3",description:"Intelligent Contract que analiza URLs y alcanza consenso entre validadores para registrar señales de reputación. La categoría de riesgo se deriva de forma determinista; las integraciones deben decidir con risk_tier, no con trust_score.",note:"Suites Direct e integración documentadas · revisar resultados por red antes de afirmar consenso live",repo:"https://github.com/Said1235/AI-URL-Reputation-Oracle",visual:"visual-dark",mark:"↗" },
     { number:"06",name:"GenVerify AI",category:"GENLAYER · DOCUMENT VERIFICATION",description:"Motor genérico de verificación documental mediante requisitos en lenguaje natural. El contrato registra el hash y el veredicto estructurado, sin almacenar el documento original.",note:"Verificación por consenso · hash on-chain · documento original fuera del estado",repo:"https://github.com/Said1235/GenVerify-AI",visual:"visual-yellow",mark:"✓" },
     { number:"07",name:"DAOProposalGuard",category:"GENLAYER · DAO GOVERNANCE",description:"Intelligent Contract que evalúa propuestas contra reglas definidas por la DAO. Los validadores identifican reglas incumplidas y el estado APPROVED o REJECTED se deriva en código.",note:"18/18 tests Direct Mode · lint 3/3 · typecheck sin errores",repo:"https://github.com/Said1235/DAOProposalGuard",visual:"visual-blue",mark:"◈" }
-  ],
-  articles: [
-    /* Añade aquí cada artículo. Ejemplo:
-    {
-      slug: "mi-primera-nota",
-      title: "Mi primera nota",
-      date: "2026-11-14",
-      category: "PROCESO",
-      excerpt: "Una breve introducción a la idea.",
-      readTime: "4 MIN",
-      body: [
-        { type: "paragraph", text: "Escribe aquí el primer párrafo." },
-        { type: "heading", text: "Una idea importante" },
-        { type: "paragraph", text: "Continúa desarrollando la idea." },
-        { type: "quote", text: "Una frase para destacar." },
-        { type: "list", items: ["Primer punto", "Segundo punto"] }
-      ]
-    }
-    */
   ]
 };
