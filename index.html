@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1eb">
+  <meta name="description" content="Portafolio de Said. Proyectos de software, inteligencia artificial y productos digitales.">
+  <meta property="og:title" content="Said — Ideas en movimiento">
+  <meta property="og:description" content="Proyectos, experimentos y notas sobre software, IA y tecnología.">
+  <meta property="og:type" content="website">
+  <title>Said — Ideas en movimiento</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Inicio">SAID<span>.</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+      <nav class="nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#work">Proyectos</a><a href="#lab">Laboratorio</a><a href="#notes">Bitácora</a><a href="#about">Sobre mí</a>
+        <a class="nav-cta" href="https://github.com/Said1235" target="_blank" rel="noreferrer">GitHub <b>↗</b></a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero section-grid" id="top">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span><span id="hero-eyebrow">INDEPENDENT BUILDER · LATAM</span></div>
+          <h1 id="hero-title">Ideas que se convierten en <em>productos reales.</em></h1>
+          <p class="hero-lede" id="hero-description">Construyo software, exploro inteligencia artificial y convierto problemas complejos en experiencias digitales útiles.</p>
+          <div class="hero-actions"><a class="button button-dark" href="#work">Explorar proyectos <b>↘</b></a><a class="text-link" href="#about">Conóceme <b>↗</b></a></div>
+          <div class="hero-footnote"><span></span><i id="hero-note">Pensar · construir · probar · mejorar</i></div>
+        </div>
+        <div class="hero-art" aria-label="Composición gráfica abstracta">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+          <div class="hero-core"><strong>MAKE<br>IT<br><i>REAL.</i></strong><b>↗</b></div>
+          <div class="stamp stamp-a">CURIOSITY<br>IN MOTION</div><div class="stamp stamp-b">✳ BUILD / LEARN / REPEAT</div>
+          <div class="figure-caption">FIG. 01 — IDEAS TO SYSTEMS</div>
+        </div>
+      </section>
+      <div class="ticker" aria-label="Áreas de trabajo"><div class="ticker-track"><span>SOFTWARE</span><i>✳</i><span>ARTIFICIAL INTELLIGENCE</span><i>✳</i><span>ON-CHAIN SYSTEMS</span><i>✳</i><span>PRODUCT THINKING</span><i>✳</i><span>SOFTWARE</span><i>✳</i><span>ARTIFICIAL INTELLIGENCE</span><i>✳</i></div></div>
+      <section class="section-pad" id="work">
+        <div class="section-heading"><div><div class="kicker">01 / SELECTED WORK</div><h2>Proyectos con <em>intención.</em></h2></div><p>Una selección de productos, prototipos y experimentos. Cada uno empieza con una pregunta y termina en algo que se puede explorar.</p></div>
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+        <div class="section-bottom"><span>Más código, pruebas e ideas</span><a href="https://github.com/Said1235?tab=repositories" target="_blank" rel="noreferrer">Ver todos los repositorios ↗</a></div>
+      </section>
+      <section class="lab-section section-pad" id="lab">
+        <div class="lab-intro"><div class="kicker light">02 / THE LAB</div><h2>Curiosidad en<br><em>modo construcción.</em></h2><p>Un espacio para experimentar con nuevas herramientas, modelos y formas de coordinar sistemas inteligentes.</p><a class="light-link" href="https://github.com/Said1235?tab=repositories" target="_blank" rel="noreferrer">Explorar laboratorio ↗</a></div>
+        <div class="lab-panels">
+          <article class="lab-card"><div class="lab-top">01 — INTELLIGENCE <b>✳</b></div><div class="lab-visual neural"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><i>AI</i></div><h3>IA aplicada</h3><p>Modelos que analizan, clasifican y ayudan a tomar decisiones con contexto.</p></article>
+          <article class="lab-card"><div class="lab-top">02 — VERIFIABLE SYSTEMS <b>◈</b></div><div class="lab-visual chain"><i>INPUT</i><b>↔</b><i class="active">VERIFY</i><b>↔</b><i>PROOF</i></div><h3>Sistemas verificables</h3><p>Consenso, trazabilidad y contratos inteligentes para resultados auditables.</p></article>
+          <article class="lab-card"><div class="lab-top">03 — PRODUCT CRAFT <b>↗</b></div><div class="lab-visual product"><div><i></i><i></i><i></i><span></span><span></span><b></b><span></span></div></div><h3>Producto y experiencia</h3><p>Interfaces claras que convierten herramientas complejas en flujos comprensibles.</p></article>
+        </div>
+      </section>
+      <section class="section-pad notes-section" id="notes">
+        <div class="section-heading"><div><div class="kicker">03 / FIELD NOTES</div><h2>Ideas que merecen<br><em>una segunda mirada.</em></h2></div><p>Notas de proceso, aprendizajes y observaciones desde el taller. Este espacio ya está listo para tus próximos artículos.</p></div>
+        <div id="article-list" class="article-list"></div>
+        <div class="notes-footer"><span>✳</span><div><strong>El cuaderno está abierto.</strong><p>Cuando publiques una nota nueva, aparecerá aquí automáticamente.</p></div><a class="text-link" href="article.html">Ver formato de artículo ↗</a></div>
+      </section>
+      <section class="about-section section-pad" id="about">
+        <div class="about-aside"><div class="kicker light">04 / A LITTLE ABOUT ME</div><div class="about-monogram">S<span>.</span></div><small>LEARNING IN PUBLIC<br>BUILDING WITH PURPOSE</small></div>
+        <div class="about-main"><h2>No se trata solo de escribir código. Se trata de <em>hacer que algo pase.</em></h2><p id="about-description">Me interesa el punto donde la tecnología se vuelve útil: productos digitales, automatización, inteligencia artificial y sistemas que generan confianza. Aquí documento lo que construyo, lo que aprendo y lo que todavía estoy explorando.</p><div class="about-facts"><div><small>FOCUS</small><b>Software · IA · Web3</b></div><div><small>BASE</small><b>Latinoamérica</b></div><div><small>OPEN TO</small><b>Ideas y colaboraciones</b></div></div><a class="button button-light" href="https://github.com/Said1235" target="_blank" rel="noreferrer">Conectar en GitHub ↗</a></div>
+      </section>
+      <section class="contact-strip"><div><div class="kicker">HAVE A GOOD PROBLEM?</div><h2>Hablemos de lo que<br><em>podemos construir.</em></h2></div><a href="https://github.com/Said1235" target="_blank" rel="noreferrer" class="contact-circle" aria-label="Abrir GitHub">↗</a></section>
+    </main>
+    <footer class="footer"><a class="wordmark" href="#top">SAID<span>.</span></a><span>Hecho con curiosidad y muchas iteraciones.</span><span>© <b id="year"></b> SAID</span></footer>
+  </div>
+</body>
+</html>
