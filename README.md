@@ -36,9 +36,18 @@ Abre `content.js`:
 
 No necesitas modificar el diseño para actualizar el contenido.
 
-## Añadir un artículo
+## Publicar una entrada en la bitácora (desde GitHub, sin instalar nada)
 
-Dentro del arreglo `articles` de `content.js`, agrega un objeto como este:
+El blog no tiene un panel de administración ni un botón de publicar dentro de la web. El contenido se publica editando `content.js` en GitHub:
+
+1. Abre [`content.js`](https://github.com/Said1235/portfolio/blob/main/content.js).
+2. Pulsa el icono del lápiz (**Edit this file**) arriba a la derecha.
+3. Busca `articles: [` casi al final del archivo.
+4. Pega un objeto de artículo justo después del corchete `[`. Si ya hay artículos, sepáralos con una coma.
+5. Baja hasta **Commit changes**, escribe un mensaje como `Publicar artículo: mi primera nota` y confirma el commit en la rama `main`.
+6. GitHub Pages actualiza la web. Después abre [el portafolio](https://said1235.github.io/portfolio/) y recarga la página.
+
+Plantilla de una entrada:
 
 ```js
 {
@@ -46,19 +55,25 @@ Dentro del arreglo `articles` de `content.js`, agrega un objeto como este:
   title: "Mi primera nota",
   date: "2026-11-14",
   category: "PROCESO",
-  excerpt: "Una breve introducción a la idea.",
+  excerpt: "Resumen breve que aparecerá en la lista del blog.",
   readTime: "4 MIN",
   body: [
-    { type: "paragraph", text: "Escribe aquí el primer párrafo." },
-    { type: "heading", text: "Una idea importante" },
-    { type: "paragraph", text: "Continúa desarrollando la idea." },
-    { type: "quote", text: "Una frase para destacar." },
+    { type: "paragraph", text: "Primer párrafo del artículo." },
+    { type: "heading", text: "Un subtítulo" },
+    { type: "paragraph", text: "Desarrolla aquí la idea." },
+    { type: "quote", text: "Una frase destacada." },
     { type: "list", items: ["Primer punto", "Segundo punto"] }
   ]
 }
 ```
 
-El `slug` debe ser único. El artículo aparecerá en la bitácora y se abrirá en `article.html?slug=mi-primera-nota`.
+Reglas importantes:
+- `slug`: único, en minúsculas y con guiones. Se usa en la dirección del artículo.
+- `date`: formato `AAAA-MM-DD`.
+- `body`: admite bloques `paragraph`, `heading`, `quote` y `list`. Cada bloque de texto va entre comillas.
+- No borres la coma entre dos artículos. El último artículo del arreglo no lleva coma obligatoria.
+
+Cuando se publique, aparecerá automáticamente en la bitácora. Al abrirlo tendrá una dirección como `article.html?slug=mi-primera-nota`.
 
 ## Probar localmente
 
